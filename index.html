@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes">
-  <title>⚛️ COMPLETE PERIODIC TABLE | Big Names Mode</title>
+  <title>⚛️ COMPLETE PERIODIC TABLE | All 118 Elements</title>
   <style>
     * {
       margin: 0;
@@ -177,7 +177,7 @@
     /* MAIN GRID (rows 1-7) */
     .periodic-grid {
       display: grid;
-      grid-template-columns: repeat(18, 55px);
+      grid-template-columns: repeat(18, 52px);
       gap: 2px;
       background: rgba(0, 0, 0, 0.2);
       padding: 4px;
@@ -187,7 +187,7 @@
     /* LANTHANIDE ROW (57-71) */
     .lanthanide-row {
       display: grid;
-      grid-template-columns: 85px repeat(15, 55px);
+      grid-template-columns: 80px repeat(15, 52px);
       gap: 2px;
       background: rgba(0, 0, 0, 0.3);
       padding: 4px;
@@ -209,7 +209,7 @@
     /* ACTINIDE ROW (89-103) */
     .actinide-row {
       display: grid;
-      grid-template-columns: 85px repeat(15, 55px);
+      grid-template-columns: 80px repeat(15, 52px);
       gap: 2px;
       background: rgba(0, 0, 0, 0.3);
       padding: 4px;
@@ -228,17 +228,17 @@
       padding: 4px;
     }
 
-    /* Name mode (Symbol→Name) - BIGGER cards for full names */
+    /* Name mode requires wider cards */
     .periodic-grid.name-mode {
-      grid-template-columns: repeat(18, 80px);
+      grid-template-columns: repeat(18, 72px);
     }
     .name-mode + .lanthanide-row,
     .periodic-grid.name-mode ~ .lanthanide-row {
-      grid-template-columns: 85px repeat(15, 80px);
+      grid-template-columns: 80px repeat(15, 72px);
     }
     .name-mode + .actinide-row,
     .periodic-grid.name-mode ~ .actinide-row {
-      grid-template-columns: 85px repeat(15, 80px);
+      grid-template-columns: 80px repeat(15, 72px);
     }
 
     /* Element card styling */
@@ -255,7 +255,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 55px;
+      min-height: 52px;
     }
 
     .element-card:active {
@@ -268,38 +268,19 @@
     }
 
     .element-symbol {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: #fff3cf;
     }
 
-    /* BIGGER NAMES in Symbol→Name mode */
     .element-fullname {
-      font-size: 0.75rem;
+      font-size: 0.6rem;
       font-weight: 700;
       color: #f9e0a0;
       text-align: center;
-      line-height: 1.3;
+      line-height: 1.2;
       word-break: break-word;
-      padding: 0 2px;
-    }
-
-    /* Even bigger on larger screens */
-    @media (min-width: 1200px) {
-      .element-fullname {
-        font-size: 0.85rem;
-      }
-      .periodic-grid.name-mode {
-        grid-template-columns: repeat(18, 90px);
-      }
-      .name-mode + .lanthanide-row,
-      .periodic-grid.name-mode ~ .lanthanide-row {
-        grid-template-columns: 85px repeat(15, 90px);
-      }
-      .name-mode + .actinide-row,
-      .periodic-grid.name-mode ~ .actinide-row {
-        grid-template-columns: 85px repeat(15, 90px);
-      }
+      padding: 0 1px;
     }
 
     .element-card.guessed {
@@ -382,28 +363,26 @@
     }
 
     /* Responsive adjustments */
-    @media (max-width: 1100px) {
-      .periodic-grid { grid-template-columns: repeat(18, 48px); }
-      .periodic-grid.name-mode { grid-template-columns: repeat(18, 72px); }
-      .lanthanide-row { grid-template-columns: 75px repeat(15, 48px); }
-      .actinide-row { grid-template-columns: 75px repeat(15, 48px); }
+    @media (max-width: 1000px) {
+      .periodic-grid { grid-template-columns: repeat(18, 46px); }
+      .periodic-grid.name-mode { grid-template-columns: repeat(18, 64px); }
+      .lanthanide-row { grid-template-columns: 70px repeat(15, 46px); }
+      .actinide-row { grid-template-columns: 70px repeat(15, 46px); }
       .name-mode + .lanthanide-row,
-      .periodic-grid.name-mode ~ .lanthanide-row { grid-template-columns: 75px repeat(15, 72px); }
+      .periodic-grid.name-mode ~ .lanthanide-row { grid-template-columns: 70px repeat(15, 64px); }
       .name-mode + .actinide-row,
-      .periodic-grid.name-mode ~ .actinide-row { grid-template-columns: 75px repeat(15, 72px); }
-      .element-fullname { font-size: 0.7rem; }
+      .periodic-grid.name-mode ~ .actinide-row { grid-template-columns: 70px repeat(15, 64px); }
     }
 
-    @media (max-width: 900px) {
-      .periodic-grid { grid-template-columns: repeat(18, 42px); }
-      .periodic-grid.name-mode { grid-template-columns: repeat(18, 64px); }
-      .lanthanide-row { grid-template-columns: 65px repeat(15, 42px); }
-      .actinide-row { grid-template-columns: 65px repeat(15, 42px); }
+    @media (max-width: 850px) {
+      .periodic-grid { grid-template-columns: repeat(18, 40px); }
+      .periodic-grid.name-mode { grid-template-columns: repeat(18, 56px); }
+      .lanthanide-row { grid-template-columns: 60px repeat(15, 40px); }
+      .actinide-row { grid-template-columns: 60px repeat(15, 40px); }
       .name-mode + .lanthanide-row,
-      .periodic-grid.name-mode ~ .lanthanide-row { grid-template-columns: 65px repeat(15, 64px); }
+      .periodic-grid.name-mode ~ .lanthanide-row { grid-template-columns: 60px repeat(15, 56px); }
       .name-mode + .actinide-row,
-      .periodic-grid.name-mode ~ .actinide-row { grid-template-columns: 65px repeat(15, 64px); }
-      .element-fullname { font-size: 0.65rem; }
+      .periodic-grid.name-mode ~ .actinide-row { grid-template-columns: 60px repeat(15, 56px); }
     }
   </style>
 </head>
@@ -442,7 +421,7 @@
     <button class="btn" id="nextBtn">✨ NEXT</button>
     <button class="btn btn-primary" id="resetBtn">🔄 RESTART</button>
   </div>
-  <div id="globalMsg" class="status">⚡ Complete table | Symbol→Name mode has BIG readable names | Horizontal scroll only</div>
+  <div id="globalMsg" class="status">⚡ Complete table with all 118 elements | Lanthanides + Actinides shown below</div>
 </div>
 
 <script>
@@ -481,6 +460,7 @@
   ];
 
   // Build main table positions (rows 1-7, columns 1-18)
+  // This correctly places elements in their standard grid positions
   function buildMainLayout() {
     const pos = Array(119).fill(null);
     
@@ -610,7 +590,6 @@
     card.dataset.num = element.num;
 
     if(gameMode === "symbolToName") {
-      // BIG readable names in Symbol→Name mode
       card.innerHTML = `
         <div class="element-number">${element.num}</div>
         <div class="element-fullname">${element.name}</div>
@@ -699,7 +678,7 @@
   }
 
   function renderAllTables() {
-    // Apply name-mode class for wider cards in Symbol→Name mode
+    // Apply name-mode class for wider cards
     if(gameMode === "symbolToName") {
       gridContainer.classList.add("name-mode");
     } else {
@@ -767,7 +746,7 @@
     loadNewQuestion();
     clearTempEffects();
     feedbackSpan.innerHTML = "🔄 Game restarted!";
-    globalMsgSpan.innerHTML = gameMode === "nameToSymbol" ? "Name→Symbol: tap correct SYMBOL" : "Symbol→Name: tap correct NAME (big & clear)";
+    globalMsgSpan.innerHTML = gameMode === "nameToSymbol" ? "Name→Symbol: tap correct SYMBOL" : "Symbol→Name: tap correct NAME";
   }
 
   function nextQuestion() {
@@ -799,7 +778,7 @@
     } else {
       modeSymbolBtn.classList.add("active");
       modeNameBtn.classList.remove("active");
-      globalMsgSpan.innerHTML = "Symbol→Name: Table shows BIG NAMES. Tap matching name.";
+      globalMsgSpan.innerHTML = "Symbol→Name: Table shows FULL NAMES. Tap matching name.";
     }
     feedbackSpan.innerHTML = `Switched to ${mode === "nameToSymbol" ? "Name→Symbol" : "Symbol→Name"} mode.`;
   }
